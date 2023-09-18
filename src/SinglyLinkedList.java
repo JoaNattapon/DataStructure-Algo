@@ -64,6 +64,7 @@ public class SinglyLinkedList {
         size++;
     }
 
+    // Print all element in LinkedList
     public void printLinkedList() {
         Node current = head;
         while (current != null) {
@@ -72,5 +73,13 @@ public class SinglyLinkedList {
         }
         System.out.println("null");
     }
+
+    // Search for specific value in LinkedList
+    public void searchByValue(int value) {
+
+        Node tempNode = head;
+        for ()
+    }
+
 
 }
