@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class SinglyLinkedList {
 
     public Node head;
@@ -8,6 +11,10 @@ public class SinglyLinkedList {
         this.head = null;
         this.tail = null;
         this.size = 0;
+    }
+
+    public void getSize() {
+        System.out.println("There are total of : " + size + " elements in the list.");
     }
 
     @Override
@@ -77,9 +84,37 @@ public class SinglyLinkedList {
     // Search for specific value in LinkedList
     public void searchByValue(int value) {
 
+        int positionCount = 1;
+        boolean isFound = false;
+        List<Integer> positionFound = new ArrayList<>();
+
         Node tempNode = head;
-        for ()
+
+        if (head == null) {
+            System.out.println("Empty linked-list . . .");
+
+        } else {
+
+            while (tempNode != null) {
+                if (tempNode.value == value) {
+                    isFound = true;
+                    positionFound.add(positionCount);
+                }
+                tempNode = tempNode.nextRef;
+                positionCount++;
+            }
+
+        }
+        if (isFound) {
+            System.out.println("Found " + value + " and found it position -> " + positionFound);
+
+        } else {
+            System.out.println(value + " not found.");
+        }
+
     }
 
+    // Delete the node from LinkedList
+    public void deleteNode()
 
 }
