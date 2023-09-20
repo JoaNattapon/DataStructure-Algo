@@ -115,6 +115,48 @@ public class SinglyLinkedList {
     }
 
     // Delete the node from LinkedList
-    public void deleteNode()
+    public void deleteNode(int position) {
 
+        if (head == null) {
+            System.out.println("Singly linked-list is empty !");
+            return;
+        } else if (position == 0) {
+            head = head.nextRef;
+            size--;
+            if (size == 0) {
+                tail = null;
+            }
+        } else if (position >= size) {
+            Node tempNode = head;
+            for (int i = 0; i < size - 1; i++) {
+                tempNode = tempNode.nextRef;
+            }
+            if (tempNode == head) {
+                tail = head = null;
+                size--;
+                return;
+            }
+            tempNode.nextRef = null;
+            tail = tempNode;
+            size--;
+        }else {             // this is for other position
+            Node tempNode = head;
+            for (int i = 0; i < position - 1; i++) {
+                tempNode = tempNode.nextRef;
+            }
+            tempNode.nextRef = tempNode.nextRef.nextRef;
+            size--;
+        }
+
+    }
+
+    // Delete all Nodes in LinkedList
+    public void deleteAllNodes() {
+        if (head == null) {
+            System.out.println("Linked-List already empty !!!");
+        } else {
+            head = tail = null;
+            size = 0;
+        }
+    }
 }
