@@ -39,6 +39,8 @@ public class Main {
         //------------------------------------------------- Circular LinkedList ------------------------------------------------
         CircularLinkedList csll = new CircularLinkedList();
         csll.createCircularLinkedList(63);
+        System.out.println(csll.getHead());
+        System.out.println(csll.getNextHead());
         System.out.println(csll.getSize());
 
     }
